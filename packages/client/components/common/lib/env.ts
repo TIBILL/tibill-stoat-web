@@ -69,11 +69,11 @@ export default {
   MAX_EMOJI: (import.meta.env.VITE_CFG_MAX_EMOJI as number) ?? 100,
   /**
    * Max file size allowed for uploads (in bytes)
-   * 20 MB = 20 * 1024 * 1024 = 20,971,520 bytes
-   * I kinda wonder if this should be a setting, or something fetched from the backend dynamically.
+   * Default: 2 GB = 2 * 1024 * 1024 * 1024 = 2,147,483,648 bytes
+   * Overridable via VITE_CFG_MAX_FILE_SIZE build-time env var.
    */
   MAX_FILE_SIZE:
-    (import.meta.env.VITE_CFG_MAX_FILE_SIZE as number) ?? 20_000_000,
+    (import.meta.env.VITE_CFG_MAX_FILE_SIZE as number) ?? 2_147_483_648,
   /**
    * RNNoise worklet CDN host location. Defaults to blank, which uses the url provided by the livekit-rnnoise-processor package.
    */
